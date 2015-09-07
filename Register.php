@@ -52,7 +52,7 @@
     setcookie(session_name(),'',0,'/');
     session_regenerate_id(true);
 ?>
-<?php require 'Connections/Connections.php'; ?>
+<?php require 'includes/Conn.php'; ?>
 <?php
 		//Test two input passwords to match.
 		if ($_POST["Password"] == $_POST["Confirm_Password"]) {
