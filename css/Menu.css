@@ -1,0 +1,98 @@
+#Menu {
+	width:800px;
+	height:50px;
+	clear:both;
+	border-radius: 4px;
+	/* Gradient BG Start */
+	background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0, rgb(186, 73, 67)),
+	color-stop(0.75, rgb(153, 33, 25))
+);
+background-image: -o-linear-gradient(bottom, rgb(186, 73, 67) 0%, rgb(153, 33, 25) 75%);
+background-image: -moz-linear-gradient(bottom, rgb(186, 73, 67) 0%, rgb(153, 33, 25) 75%);
+background-image: -webkit-linear-gradient(bottom, rgb(186, 73, 67) 0%, rgb(153, 33, 25) 75%);
+background-image: -ms-linear-gradient(bottom, rgb(186, 73, 67) 0%, rgb(153, 33, 25) 75%);
+background-image: linear-gradient(to bottom, rgb(186, 73, 67) 0%, rgb(153, 33, 25) 75%);
+	/* Gradient BG End */
+}
+nav .cssmenu { margin:0; padding:0 }
+nav .cssmenu li {
+	list-style-type:none;
+	display:block;
+	float:left;
+	width:160px;
+	height:50px;
+	text-align:center;
+	line-height:50px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:17px;
+}
+nav .cssmenu li a {
+	display:block;
+	text-decoration:none;
+	color:#FFF;
+}
+nav .cssmenu li:before {
+	float:left;
+	content:'|';
+	color:#EEE;
+}
+nav .cssmenu li:first-child:before {
+content: none;
+}
+nav .cssmenu li:hover {
+	background-color:rgb(156, 12, 12);
+}
+nav .cssmenu ul {
+	display:none;
+}
+nav .cssmenu li:hover > ul {
+	display:block;
+}
+nav .cssmenu ul li {
+	background-color:rgb(31, 25, 25);
+}
+nav .cssmenu ul li:hover {
+	background-color:rgb(156, 12, 12);
+}
+nav .cssmenu ul ul {
+	display:none;
+}
+nav .cssmenu ul li:hover > ul {
+	display:block;
+	margin-left:160px;
+	margin-top:-50px;
+}
+nav .cssmenu ul ul li {
+	background-color:rgb(31, 25, 25);
+	content: none;
+}
+nav .cssmenu ul ul li:hover {
+	background-color:rgb(156, 12, 12);
+}
+nav .cssmenu ul li:before {
+	content: none;
+}
+nav .cssmenu ul ul li:before {
+	content: none;
+}
+
+@media all and (min-width: 900px) {
+	#Menu {
+		display:block;
+	}
+	.header {
+		display:none;
+	}
+}
+@media all and (max-width: 900px) {
+	#Menu {
+		display:none;
+	}
+	.header {
+		display:block;
+	}
+}
