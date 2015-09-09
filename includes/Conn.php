@@ -18,24 +18,9 @@
 //Connection string order is: host, user, password, database
 //Note table is 'accounts' in the swgemu MySQL DB model.
 
-$con = mysqli_connect("localhost", "swgemu", "123456", "swgemu");
-
-//Place the information in PHP variable formet(s).
-$DBHost = "127.0.0.1";
-$DBPort = "3306";
-$DBName = "swgemu";
-$DBUser = "swgemu";
-$DBPass = "123456";
-//Left it set to distribution secret
-$DBSecret = "swgemus4cr37!";
-
-//Generates a 32 character salt
-function generateSalt32($max = 32) {
-	$baseStr = time() . rand(0, 1000000) . rand(0, 1000000);
-	$md5Hash = md5($baseStr);
-	if($max < 32){
-		$md5Hash = substr($md5Hash, 0, $max);
-	}
-	return $md5Hash;
+require_once __DIR__.'/Settings.php'
+function getDatabaseConnection() {
+	$con = new mysqli(Settings::DB_HOST, Settings::DB_USER, Settings::DB_PASS, Settings::DB_NAME, Settings::DB_PORT);
+	return $con;
 }
 ?>
